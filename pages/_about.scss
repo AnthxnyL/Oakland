@@ -1,0 +1,197 @@
+// SECTION 1
+
+.about-section-1 {
+    @include size (100%, 70vh);
+    background-color: $light-grey;
+    padding : 100px 100px 64px 100px;
+    @include flex (flex-start, flex-end);
+
+    &__content {
+        @include flex (flex-start, flex-start, column);
+        gap : 48px;
+
+        h1 {
+            @extend %h1;
+        }
+
+        p {
+            @extend %body;
+            max-width: 500px ;
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .about-section-1 {
+        padding : 64px 24px;
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .about-section-1 {
+        &__content {
+            gap : 16px;
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }  
+}
+
+// SECTION 2
+
+.about-section-2 {
+    @include size (100%, auto);
+    margin-top: 140px;
+    padding : 0 100px;
+    @include flex (center, center, column);
+    gap : 80px;
+
+    &__content {
+        @include size (100%, auto);
+        @include flex (flex-start, center);
+
+        h2 {
+            @extend %h2;
+        }
+    }
+
+    &__image {
+        @include size (100%, auto);
+        @include flex (flex-end, flex-end);
+        gap : 20px;
+
+        img {
+            @include size (750px, auto);
+            border-radius: $border-radius;
+        }
+
+        p {
+            @extend %label;
+            color : $dark-grey;
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .about-section-2 {
+        padding : 0 24px;
+        gap : 40px;
+
+        &__image {
+            @include flex (center, center, column);
+
+            img {
+                @include size (100%, auto);
+            }
+
+            p {
+                @include size (100%, auto);
+                justify-self: flex-start;
+            }
+        }
+    }
+}
+
+// SECTION 3
+
+.about-section-3 {
+    margin : 80px 0 100px 0;
+    padding: 0 100px;
+    @include size (100%, auto);
+    @include flex (center, center);
+
+    &__block {
+        @include size (100%, auto);
+        @include flex (flex-start, center);
+       
+        p {
+            @extend %body;
+            max-width: 750px;
+        }  
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .about-section-3 {
+        padding : 0 24px;
+    }
+}
+
+
+// SECTION 4
+
+.about-section-4 {
+    @include size (100%, auto);
+    @include flex (center, center);
+    padding: 0 100px;
+
+    &__background {
+        @include size (100%, 520px);
+        @include flex (center, center);
+        position : relative;
+        z-index : 0;
+        background : center / cover no-repeat url("./img/about/arbres-vue.jpg");
+        border-radius: $border-radius;
+
+        p {
+            @extend %body; 
+            color : $white;
+            font-size: 40px;
+            line-height: calc(40px * 1.5);
+            z-index : 2;
+            text-align: center;
+        }
+
+        .filter {
+            border-radius: $border-radius;
+            position : absolute;
+            z-index : 1;
+            @include size (100%, 100%);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%);
+        }     
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .about-section-4 {
+        padding : 0 24px;
+
+        &__background {
+
+            p {
+                font-size: 32px;
+                line-height: calc(32px * 1.5);
+            }
+        }
+    }
+}
+
+
+// SECTION 5
+
+.about-section-5 {
+    margin : 100px 0 140px 0;
+    @include size (100%, auto);
+    @include flex (center, center);
+    padding: 0 100px;
+
+    &__content {
+        @include size (100%, auto);
+        @include flex (flex-end, center);
+
+        p {
+            @extend %body;
+            max-width: 780px;      
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .about-section-5 {
+        padding : 0 24px;
+    }
+    
+}
+

@@ -1,0 +1,391 @@
+// Ce fichier est intentionnellement laissé vide
+body {
+    font-family: 'Inter Thin', sans-serif;
+    color : $accent-100;
+}
+
+// SECTION 1
+
+.homepage-section-1 {
+    @include grid (1fr 1fr, auto, 0);
+    @include size (100%, 100vh);
+
+    &__content {
+        padding: 64px 100px;
+        @include size (100%, 100%);
+        @include flex (flex-end, flex-start, column);
+        gap : 48px;
+        background-color: $accent-100;
+
+
+        h1 {
+            @extend %h1;
+            max-width : 300px;
+            color: $white;
+        }
+
+        p {
+            @extend %body;
+            color: $white;
+            max-width: 550px;
+        }
+
+        a {
+            @extend %button;
+            color : $accent-100;
+            background-color: $white;
+            
+            &:hover {
+                background-color: $accent-100;
+                color : $white;
+            }
+        }
+
+    }
+
+    &__image {
+        @include size (100%, 100%);
+        background: bottom / cover no-repeat url('./img/homepage/lampadaire.png')  ;
+       
+    }
+    
+}
+
+@media screen and (max-width : 1024px) {
+    .homepage-section-1 {
+        &__content {
+            padding: 64px 24px;
+        }
+    }
+}
+
+
+@media screen and (max-width : 600px) {
+    .homepage-section-1 {
+        grid-template-columns: 1fr;
+        @include size (100%, auto);
+
+        &__content {
+            @include size (100%, 700px);
+            padding: 40px 24px;
+        }
+
+        &__image {
+            @include size (100%, 500px);
+            
+        }
+
+    }
+}
+
+@media screen and (max-width : 400px) {
+    .homepage-section-1 {
+        &__content {
+            padding: 40px 24px;
+
+            h1 {
+                font-size: 50px;
+                line-height: calc(50px * 1.3);
+            }
+        }
+    }
+}
+
+// SECTION 2
+
+.homepage-section-2 {
+    margin-top: 140px;
+    padding: 0px 100px;
+    @include size (100%, auto);
+    @include flex (space-between, flex-start, column);
+    gap : 60px;
+
+    &__content {
+        @include size (100%, auto);
+        @include flex (space-between, flex-start, column);
+        gap : 40px;
+
+        h2 {
+            @extend %h2;
+            color: $accent-100;
+        }
+
+        p {
+            @extend %body;
+            color: $accent-85;
+            max-width: 750px;
+        }
+    }
+
+    &__cards {
+        @include size (100%, auto);
+        @include flex (center, center);
+        gap : 20px;
+
+        &__card {
+            @include size (375px, 340px);
+            position: relative;
+            border-radius: $border-radius;
+           
+        }
+
+        #card1-homepage {
+            background : center / cover no-repeat url('./img/homepage/eolienne.jpg');
+        }
+
+        #card2-homepage {
+            background : center / cover no-repeat url('./img/homepage/led.jpg');
+        }
+        #card3-homepage {
+            background : center / cover no-repeat url('./img/homepage/panneau-solaire.jpg');
+        }
+        #card4-homepage {
+            background : center/ cover no-repeat url('./img/homepage/voiture.jpg');
+        }
+
+        span {
+            @extend %body;
+            color: $white;
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+        }
+    }
+}
+
+
+@media screen and (max-width : 1024px){
+    .homepage-section-2 {
+        padding: 0px 24px;
+        margin-top: 96px;
+    }
+}
+
+
+@media screen and (max-width : 900px) {
+    .homepage-section-2 {
+
+        &__cards {
+           flex-wrap: wrap;
+           @include position (center, center);
+        }
+    }
+    
+}
+
+
+// SECTION 3
+
+.homepage-section-3 {
+    margin: 140px 0 200px 0;
+    padding: 0px 100px;
+    @include size (100%, auto);
+    @include flex (flex-end, center);
+
+    p {
+        @extend %body;
+        color: $accent-85;
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .homepage-section-3 {
+        padding: 0px 24px;
+        margin: 80px 0 96px 0;
+        @include flex (flex-start, center);
+
+        p {
+            @include size (100%, auto);
+        }
+    } 
+}
+
+// SECTION 4
+
+.homepage-section-4 {
+    @include size (100%, auto);
+    @include flex (center, center);
+    position: relative;
+    gap : 40px;
+
+    &__content {
+        z-index: 1;
+        margin-left: 140px;
+        padding-right : 90px;
+        @include size (100%, auto);
+        @include flex (center, flex-start, column);
+        gap : 40px;
+
+        h2 {
+            @extend %h2;
+            color: $accent-100;
+        }
+
+        p {
+            @extend %body;
+            color: $accent-85;
+            
+        }
+
+        .link-section-4 {
+            transition: transform 0.3s ease-in-out;
+            cursor : pointer;
+
+            a {
+                @extend %link;
+                color : $accent-100;
+            }
+
+            span {
+                @extend %body;
+                color: $accent-100;
+                position: relative;
+                left: 2px;
+                transition: left 0.3s ease-in-out;
+            }
+
+            &:hover {    
+                span {
+                    left: 12px;      
+                }
+            }
+        }   
+    }
+
+    &__image {
+        z-index: 1;
+        @include size (auto, 600px);
+        margin-left : 100px;
+        @include flex (center, center);
+
+        img {
+            @include size (auto, 100%);
+        }
+    }
+
+    .background-section-4 {
+        background-color: $light-grey;
+        position : absolute;
+        @include size (100%, 590px);
+        z-index: 0;
+        top : 70px;
+    }
+}
+
+@media screen and (max-width : 1200px) {
+    .homepage-section-4 {
+
+        &__content {
+            margin-left : 80px;
+            padding-right: 40px;
+        }
+
+        &__image {
+            @include size (auto, 500px);
+            margin-left: 60px;
+        }
+    }
+}
+
+@media screen and (max-width : 1024px ){
+
+    .homepage-section-4 {
+        flex-wrap: wrap;
+        background-color: $light-grey;
+        padding: 32px 24px;
+        overflow: hidden;
+        
+        &__content {
+            margin : 0;
+        }
+
+        &__image {
+            @include size (auto, 500px);
+            margin-left: 0;   
+            
+            img {
+                @include size (auto, 100%);
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .homepage-section-4 {
+        padding: 32px 24px;
+        margin: 80px 0 96px 0;
+        @include flex (flex-start, center);
+
+        &__content {
+            padding-right: 0;
+        }
+
+        &__image {
+            @include size (auto, 300px);
+            margin-left: 0; 
+        }
+        .background-section-4 {
+            display: none;
+        }
+    } 
+    
+}
+
+
+
+// SECTION 5
+
+.homepage-section-5 {
+    margin-top: 100px;
+    padding: 0px 100px;
+    @include size (100%, auto);
+    @include flex (flex-start, flex-start, column);
+    gap: 48px;
+    max-width: 900px;
+
+    h2 {
+        @extend %h2;
+        color: $accent-100;
+    }
+
+    p {
+        @extend %body;
+        color: $accent-85;
+    }
+
+    .link-section-5 {
+        transition: transform 0.3s ease-in-out;
+        cursor : pointer;
+        border-bottom: $light-grey 2px solid;
+
+        a {
+                @extend %link;
+                color : $accent-100;
+        }
+
+        span {
+            @extend %body;
+            color: $accent-100;
+            position: relative;
+            left: 2px;
+            transition: left 0.3s ease-in-out;
+        }
+
+        &:hover {    
+            span {
+                left: 12px;      
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .homepage-section-5 {
+        padding: 0px 24px;
+        margin-top: 96px;
+        
+    }
+    
+}

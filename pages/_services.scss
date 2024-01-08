@@ -1,0 +1,306 @@
+// SECTION 1
+
+.services-section-1 {
+    @include size (100%, 70vh);
+    background-color: $accent-100;
+    padding : 100px 100px 64px 100px;
+    @include flex (flex-start, flex-end);
+
+    &__content {
+        @include flex (flex-start, flex-start, column);
+        gap : 48px;
+        color : $white;
+
+        h1 {
+            @extend %h1;
+        }
+
+        p {
+            @extend %body;
+            max-width: 530px ;
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .services-section-1 {
+        padding :  64px 24px;
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .services-section-1 {
+        &__content {
+            gap : 16px;
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }  
+}
+
+// SECTION 2
+
+.services-section-2 {
+    margin-top : 140px;
+    padding: 0 100px;
+    @include size (100%, auto);
+
+    .dropdown {
+        @include size (100%, auto);
+        @include flex (flex-start, flex-start, column);
+        position: relative;  
+        border-top : 1px solid $accent-100;
+        padding: 30px 0;
+
+        a {
+            text-decoration: none;
+            @extend %accordion-title;
+        }
+
+        [data-toggle="dropdown"] {
+            @include size (100%, auto); 
+            color : $accent-100;
+            padding: 10px;
+        }
+
+        .icon-arrow {
+            position: absolute;
+            right: 0;
+            transform: rotate(90deg);
+            transition: transform .6s;
+
+            &.open {
+                transform: rotate(-90deg);
+                transition: transform .6s;
+            }
+            &.close {
+                transform: rotate(90deg);
+                transition: transform .6s;
+            }
+        }
+
+        .dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            @include ul-nostyle;
+
+
+            li {
+              padding: 40px 0 40px 10px;
+              max-width: 600px;
+              @extend %body;
+
+            }
+        }
+
+        .show, .hide {
+            transform-origin: 50% 0;
+        }
+
+        .show {
+            display: block;
+            max-height: 9999px;
+            transform: scaleY(1);
+            @include animation(showAnimation .5s ease-in-out);
+            transition: max-height 1s ease-in-out;
+        }
+
+        .hide {
+            max-height: 0;
+            transform: scaleY(0);
+            @include animation(hideAnimation .4s ease-out);
+            transition: max-height .6s ease-out;
+        }
+    }
+}
+
+// ANIMATION
+
+@include keyframes(showAnimation) {
+	0% {
+		@include transform(scaleY(0.1));
+	}
+	40% {
+		@include transform(scaleY(1.04));
+	}
+	60% {
+		@include transform(scaleY(0.98));
+	}
+	80% {
+		@include transform(scaleY(1.04));
+	}
+	100% {
+		@include transform(scaleY(0.98));
+	}				
+	80% {
+		@include transform(scaleY(1.02));
+	}
+	100% {
+		@include transform(scaleY(1));
+	}
+}
+
+@include keyframes(hideAnimation) {
+  0% {
+  	@include transform(scaleY(1));
+  }
+  60% {
+  	@include transform(scaleY(0.98));
+  }
+  80% {
+  	@include transform(scaleY(1.02));
+  }
+  100% {
+  	@include transform(scaleY(0));
+  }
+}
+
+@media screen and (max-width : 1024px) {
+    .services-section-2 {
+        padding: 0 24px;
+        margin-top: 96px;
+    }
+}
+
+@media screen and (max-width : 530px) {
+    .services-section-2 {
+        .dropdown {
+            a {
+                font-size: 32px;
+                line-height: calc(32px * 1.5);
+            }
+        }
+    }
+}
+
+
+// SECTION 3
+
+.services-section-3 {
+    @include size (100%, auto);
+    padding: 0 100px;
+    margin-top: 100px;
+    @include flex (center, center);
+
+    &__content {
+        @include flex (flex-end, flex-end);
+        @include size (100%, auto);
+        gap : 40px;
+
+        p {
+            @extend %label; 
+            color : $dark-grey;
+        }
+
+        &__image {
+            @include flex (center, center);
+            @include size (auto, 573px);
+            object-fit: cover;
+
+            img {
+                @include size (auto, 100%);
+                border-radius: $border-radius;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .services-section-3 {
+        padding: 0 24px;
+
+        &__content {
+            @include position (center, center);
+            flex-wrap: wrap;
+            gap : 24px;
+        }
+    }  
+}
+
+@media screen and (max-width : 900px) {
+    .services-section-3 {
+        &__content {
+            &__image {
+                @include size (auto, 400px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 650px) {
+    .services-section-3 {
+        &__content {
+            &__image {
+                @include size (auto, 300px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .services-section-3 {
+        &__content {
+            &__image {
+                @include size (auto, 200px);
+            }
+        }
+    }
+}
+
+
+// SECTION 4
+
+.services-section-4 {
+    margin-top: 100px;
+    padding: 0px 100px;
+    @include size (100%, auto);
+    @include flex (flex-start, flex-start, column);
+    gap: 48px;
+    max-width: 900px;
+
+    h2 {
+        @extend %h2;
+        color: $accent-100;
+    }
+
+    p {
+        @extend %body;
+        color: $accent-85;
+    }
+
+    .link-section-4 {
+        transition: transform 0.3s ease-in-out;
+        cursor : pointer;
+        border-bottom: $light-grey 2px solid;
+
+        a {
+                @extend %link;
+                color : $accent-100;
+        }
+
+        span {
+            @extend %body;
+            color: $accent-100;
+            position: relative;
+            left: 2px;
+            transition: left 0.3s ease-in-out;
+        }
+
+        &:hover {    
+            span {
+                left: 12px;      
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 600px) {
+    .services-section-4 {
+        padding: 0px 24px;
+        margin-top: 96px;
+        
+    }
+    
+}

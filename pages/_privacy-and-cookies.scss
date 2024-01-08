@@ -1,0 +1,71 @@
+// SECTION 1
+
+.privacy-section-1 {
+    @include size (100%, 70vh);
+    background-color: $light-grey;
+    padding : 100px 100px 64px 100px;
+    @include flex (flex-start, flex-end);
+
+    &__content {
+        @include flex (flex-start, flex-start, column);
+        gap : 48px;
+
+        h1 {
+            @extend %h1;
+        }
+
+        p {
+            @extend %body;
+            max-width: 500px ;
+        }
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .privacy-section-1 {
+        padding : 64px 24px;
+    }
+}
+
+@media screen and (max-width : 425px) {
+    .privacy-section-1 {
+        &__content {
+            gap : 16px;
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }  
+}
+
+
+
+// SECTION 2
+
+.privacy-section-2 {
+    @include size (100%, auto);
+    padding : 0 100px;
+    margin : 100px 0 140px 0;
+    @include flex (flex-start, flex-start, column);
+    gap : 64px;
+
+    &__content {
+        @include flex (flex-start, flex-start, column);
+        gap : 40px;
+
+        h2 {
+            @extend %h2;
+        }
+
+        p {
+            @extend %body;
+        }
+    }
+}
+
+@media screen and (max-width : 1000px) {
+    .privacy-section-2 {
+        padding : 0 24px;
+    }
+}
