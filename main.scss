@@ -1,0 +1,31 @@
+
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+
+// Components
+@import 'components/buttons';
+
+// Pages
+@import 'pages/home';
+@import 'pages/privacy-and-cookies.scss';
+@import 'pages/about.scss';
+@import 'pages/deloite-building.scss';
+@import 'pages/contact.scss';
+@import 'pages/services.scss';
+@import 'pages/portfolio.scss';
+
+// Themes
+@import 'themes/theme';
+
+// Vendors
+@import 'vendors/bootstrap';
