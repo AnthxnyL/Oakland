@@ -1,0 +1,54 @@
+// Ce fichier est intentionnellement laissé vide
+
+@mixin grid($columns, $rows, $gap) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    gap: $gap;
+}
+
+@mixin flex($justify, $align, $direction : row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+@mixin position ($justify, $align) {
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin size($width : auto, $height : auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin animation($content) {
+    animation: $content;
+    -moz-animation: $content;
+    -webkit-animation: $content;
+}
+  
+@mixin keyframes($name) {
+    @keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @-webkit-keyframes #{$name} { @content; }
+}
+
+@mixin ul-nostyle {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin transform ($content) {
+    transform: $content;
+    -moz-transform: $content;
+    -webkit-transform: $content;
+}
+
+
+
+
+

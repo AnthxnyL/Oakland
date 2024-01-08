@@ -1,0 +1,91 @@
+//FOOTER
+
+.footer {
+    margin-top : 140px;
+    @include size (100%, 420px);
+    @include grid (2fr 1fr, 1fr 1fr, 50px);
+    background-color: $accent-100;
+    padding: 100px 100px 64px 100px;
+    color : $white;
+
+    &__nav {
+        @include flex (space-between, flex-start);
+        @include size (100%, auto);
+        gap : 50px;
+
+        .footer-section {
+            @include flex (flex-start, flex-start, column);
+            gap: 16px;
+
+            p {
+                @extend %body;
+                font-size: 21px;
+                
+            }
+
+            &__link {
+                @include flex (flex-start, flex-start, column);
+                gap: 8px;
+
+                .link-footer {
+                    @extend %link;
+                    color : $white;
+    
+                    &:visited {
+                        color : $white;
+                    }
+                }
+            }
+        }    
+    }
+
+    &__icons {
+        justify-self: flex-end;
+    }
+
+    &__copyright {
+        @include flex (flex-start, center);
+
+        p {
+            @extend %label;
+            
+        }
+    }
+}
+
+@media screen and (max-width : 1000px) {
+    .footer {
+        padding: 64px 24px;
+    }
+}
+
+@media screen and (max-width : 780px) {
+    .footer {
+        @include grid (1fr, auto, 48px);
+        @include size(100%, auto);
+        padding: 64px 0 ;
+        @include position (center, center);
+
+        &__nav {
+            @include flex (center, center, column);
+            gap : 40px;
+
+            .footer-section {
+                @include position (center, center );
+
+                &__link {
+                    @include flex (center, center, column);
+                }
+            }
+
+        }
+
+        &__icons {
+            justify-self: center;
+        }
+
+        &__copyright {
+            @include position (center, center);
+        }
+    }
+}

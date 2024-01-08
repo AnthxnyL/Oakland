@@ -1,0 +1,43 @@
+// Ce fichier est destiné à contenir les styles pour les boutons.
+
+%link {
+  @extend %body;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+  }
+
+  &:hover::after {
+    width: auto;
+    animation: underline 0.5s ease-in-out;
+  }
+}
+
+@keyframes underline {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+%button {
+  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 40px;
+  text-align: center;
+  transition-duration: 1000ms;
+
+  &:hover {
+    transition: all 0.5s ease-in-out;
+  }
+}
+

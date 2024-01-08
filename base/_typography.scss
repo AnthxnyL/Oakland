@@ -1,0 +1,45 @@
+/* _typography.scss */
+@font-face {
+  font-family:'Inter Tight';
+  src: url('./typo/InterTight-VariableFont_wght.ttf');
+}
+
+%h1 {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-h1;
+  line-height: $line-height-h1;
+}
+
+%h2 {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-h2;
+  line-height: $line-height-h2;
+}
+
+%h3 {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-h3;
+  line-height: $line-height-h3;
+}
+
+%body {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+}
+
+%label {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-label;
+  line-height: $line-height-label;
+}
+
+%accordion-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: $font-size-accordion-title;
+  line-height: $line-height-accordion-title;
+}
+
+
+
+

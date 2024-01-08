@@ -1,0 +1,155 @@
+// HEADER
+
+.header {
+    padding: 30px 100px;
+    @include size (100%, 100px);
+    @include flex(space-between, center);
+    position: absolute;
+    top : 0;
+    z-index: 1;  
+    
+    &__logo {
+        @include size (auto, 50px);
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: none;
+        cursor: pointer;
+    }
+
+    &__nav {
+
+        &__link {
+            @include flex (space-between, center);
+            gap : 32px;
+        }
+    
+        .link-header-white {
+            @extend %link;
+            @extend %body;
+            color : $white;
+    
+            &::after {
+                background-color: $white;
+            }
+    
+            &:visited {
+                color : $white;
+            }
+        }
+
+            
+        .button-header-white {
+            @extend %button;
+            @extend %body;
+            background: rgba(255, 255, 255, 0.30);
+            backdrop-filter: blur(16px);
+            color : $white;
+    
+            &:visited {
+                color : $white;
+            }
+    
+            &:hover {
+                background-color: $white;
+                color : $accent-100;
+            }
+        }
+
+        .link-header {
+            @extend %link;
+            @extend %body;
+            color : $accent-100;
+    
+            &::after {
+                background-color: $accent-100;
+            }
+    
+            &:visited {
+                color : $accent-100;
+            }
+        }
+    
+        .button-header {
+            @extend %button;
+            @extend %body;
+            background: $accent-100;
+            color : $white;
+    
+            &:visited {
+                color : $white;
+            }
+    
+            &:hover {
+                background-color: $white;
+                color : $accent-100;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .header {
+        padding : 30px 24px;
+    }
+}
+
+
+@media screen and (max-width : 950px) {
+
+    .header {
+        .hamburger {
+            display: block;
+            @include size (60px, 48px);
+            padding: 8px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.30);
+            backdrop-filter: blur(16px);
+        }
+    
+        .hamburger .line {
+            @include size (28px, 3px);
+            background-color: $white;
+            margin : 5px auto;
+        }
+
+        &__nav {
+            @include size (100%, 0px);
+            position : absolute;
+            top : 80px;
+            left : 0;
+            right: 0;
+            background-color : $accent-100;
+            transition: 0.8s;
+            overflow: hidden;
+
+            &__link {
+                margin : 32px 0 40px 0;
+                @include flex (center, center, column);
+                gap : 24px;
+                opacity: 0;      
+                
+            }
+            
+            &.active {
+                @include size (100%, auto);
+                opacity: 1;
+
+            }
+
+            &.active .header__nav__link {
+                opacity: 1;
+                
+            }
+        }
+    }   
+}
+
+@media screen and (max-width : 375px) {
+    .header {
+        padding: 30px 10px;
+        
+    }
+}
